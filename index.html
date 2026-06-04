@@ -1,186 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anurag Pisupati</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #f8fafc;
-      line-height: 1.6;
-    }
+<!doctype html>
+<html>
+  <head>
+    <!-- Page setup -->
+    <meta charset="utf-8">
+    <title>Your title here</title>
+    <meta name="description" content="A brief description of your site for search engines">
+    <meta name="author" content="Information about the author here">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="icon" type="image/png" href="favicon.png">
+  
+    <!-- Stylesheets -->
+    <!-- Reset default styles and add support for google fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+   
+    <!-- Custom styles -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 24px;
-    }
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
 
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    h1 {
-      font-size: 56px;
-      margin: 0 0 16px;
-    }
-
-    h2 {
-      margin-top: 48px;
-      color: #38bdf8;
-    }
-
-    p {
-      font-size: 20px;
-      color: #cbd5e1;
-    }
-
-    a {
-      color: #38bdf8;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      background: #38bdf8;
-      color: #020617;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 24px;
-      border-radius: 16px;
-      margin-top: 20px;
-    }
-
-    footer {
-      margin-top: 60px;
-      color: #94a3b8;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 40px;
-      }
-
-      p {
-        font-size: 18px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main class="container">
-    <section class="hero">
-      <h1>Hi, I’m Anurag Pisupati.</h1>
-      <p>
-        I’m building my personal website with GitHub Pages.
-      </p>
-      <a class="button" href="mailto:pisupatianurag@gmail.com">Contact Me</a>
-    </section>
-
-<section>
-  <h2>About</h2>
-  <div class="card">
-    <p>
-      I am Anurag Pisupati, an Associate Professor at ESTACA in Laval, France,
-      working in mechanical engineering, composite materials, and high-performance
-      material systems.
-    </p>
-    <p>
-      My work focuses on composite processing, process modeling, damage mechanisms,
-      aging, recycling, and the development of bio-based and functional composites.
-      I have experience connecting experimental characterization, simulation, and
-      applied research to support sustainable and advanced composite technologies.
-    </p>
-    <p>
-      Alongside research, I teach mechanical engineering subjects and supervise
-      student projects, with a strong interest in helping students connect theory,
-      experimentation, and engineering applications.
-    </p>
-  </div>
-</section>
+    <!-- Want to add Bootstrap? -->
+    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
     
-<section>
-  <h2>Experience</h2>
+  </head>
+  
+  <body>
 
-  <div class="card">
-    <h3>Associate Professor</h3>
-    <p>
-      ESTACA, Laval, France · 2025–Present
-    </p>
-    <p>
-      Teaching mechanical engineering subjects and supervising student projects.
-      Research focused on high-performance materials, damage mechanisms, aging,
-      recycling, and multiphysics problems.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Research and Innovation Project Manager</h3>
-    <p>
-      Technical Center for Plastics and Composites, Laval, France · 2022–2025
-    </p>
-    <p>
-      Managed national and international research projects in composites,
-      recycling, smart materials, and process optimization. Developed collaborative
-      projects, including a Horizon Europe funded project, and led contract R&amp;D
-      projects for tier 1 industrial partners.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Research Engineer</h3>
-    <p>
-      Armines, Douai, France · 2020–2022
-    </p>
-    <p>
-      Worked on composite waste recovery, valorization of glass fiber waste,
-      and development of bio-based hybrid composites through applied research
-      projects such as VALCOMP and SEABIOCOMP.
-    </p>
-  </div>
-</section>
-    <section>
-      <h2>Projects</h2>
-      <div class="card">
-        <p>
-          Project 1: Add your first project here.
-        </p>
+    <header id="header">
+      <img src="logo.png">
+      <h1>Simple Website</h1>
+      
+      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
+      <ul class="main-menu">
+        <li><a href="#home">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>                 
+    </header>
+   
+    <div id="container">
+      <div class="inner">
+        <div id="content"> 
+          
+          <div id="home" class="content-region hide">
+            <h2>Home</h2>
+            <p>
+              This is a simple website template published with Github Pages. <a href="https://github.com/zirafa/simple-website-template">Fork this repository</a> to create your own site!
+            </p>
+          </div>
+          
+          <div id="about" class="content-region hide">
+            <h2>About</h2>
+            <p>
+              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
+            </p>
+          </div>
+          
+          <div id="contact" class="content-region hide">
+            <h2>Contact</h2>
+            <p>
+              Pellentesque nec nam aliquam sem et tortor consequat. Quisque sagittis purus sit amet volutpat consequat. Magna eget est lorem ipsum dolor. 
+            </p>
+          </div>
+          
+        </div>
       </div>
-      <div class="card">
-        <p>
-          Project 2: Add another project or GitHub repository here.
-        </p>
-      </div>
-    </section>
+    </div>
 
-    <section>
-      <h2>Links</h2>
-      <div class="card">
-        <p>
-          GitHub: <a href="https://github.com/anuragpisupati">@anuragpisupati</a>
-        </p>
-        <p>
-          LinkedIn: <a href="#">Add your LinkedIn</a>
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 Anurag Pisupati. Built with GitHub Pages.
+    <footer>  
+      Footer region
     </footer>
-  </main>
-</body>
+    
+    <!-- Load additional JS scripts here -->
+    <script type="text/javascript" src="script.js"></script>
+    
+  </body>
 </html>
