@@ -17,8 +17,16 @@
     <!-- Custom styles -->
     <link href="style.css" rel="stylesheet" type="text/css" />
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
+    <!-- Keep tab visibility independent from external stylesheets. -->
+    <style>
+      #content > .content-region {
+        display: none !important;
+      }
+
+      #content > .content-region.is-active {
+        display: block !important;
+      }
+    </style>
 
     <!-- Want to add Bootstrap? -->
     <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
@@ -49,7 +57,7 @@
       <div class="inner">
         <div id="content"> 
           
-         <div id="home" class="content-region hide">
+         <div id="home" class="content-region is-active">
   <h2>Home</h2>
   <p>
     Welcome to my personal academic website. I am Anurag Pisupati, working in
@@ -57,7 +65,7 @@
   </p>
 </div>
 
-<div id="about" class="content-region hide">
+<div id="about" class="content-region">
   <h2>About</h2>
   <p>
     I am Anurag Pisupati, an Associate Professor at ESTACA in Laval, France,
@@ -70,7 +78,7 @@
   </p>
 </div>
 
-<div id="experience" class="content-region hide">
+<div id="experience" class="content-region">
   <h2>Experience</h2>
 
   <h3>Associate Professor</h3>
@@ -98,7 +106,7 @@
   </p>
 </div>
 
-<div id="education" class="content-region hide">
+<div id="education" class="content-region">
   <h2>Education</h2>
 
   <h3>PhD in Composite Materials</h3>
@@ -111,7 +119,7 @@
   <p>Jawaharlal Nehru Technological University · Hyderabad, India · 2014</p>
 </div>
 
-<div id="projects" class="content-region hide">
+<div id="projects" class="content-region">
   <h2>Projects</h2>
 
   <h3>VITRICOMP</h3>
@@ -294,7 +302,7 @@
   </ul>
 </div>
 
-<div id="publications" class="content-region hide">
+<div id="publications" class="content-region">
   <h2>Publications</h2>
 
   <h3>Published Articles</h3>
@@ -513,7 +521,7 @@
   </ol>
 </div>
 
-<div id="supervision" class="content-region hide">
+<div id="supervision" class="content-region">
   <h2>Supervision</h2>
 
   <h3>PhD and Master’s Supervision</h3>
@@ -542,7 +550,7 @@
     degradation, and interlaminar shear characterization.
   </p>
 </div>
-<div id="reviewer-activities" class="content-region hide">
+<div id="reviewer-activities" class="content-region">
   <h2>Reviewer Activities</h2>
   <ul>
     <li>Materials Today Communications (Elsevier)</li>
@@ -564,7 +572,7 @@
   </ul>
 </div>
 
-<div id="contact" class="content-region hide">
+<div id="contact" class="content-region">
   <h2>Contact</h2>
   <p>
     Email: <a href="mailto:anurag.pisupati@estaca.fr">anurag.pisupati@estaca.fr</a>
@@ -578,8 +586,7 @@
     </div>
 
     
-    <!-- Load additional JS scripts here -->
-    <script type="text/javascript" src="script.js"></script>
+    <!-- Self-contained tab navigation. -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const menuLinks = document.querySelectorAll('.main-menu a[href^="#"]');
@@ -593,7 +600,7 @@
 
           sections.forEach(function (section) {
             const isActive = section === activeSection;
-            section.classList.toggle('hide', !isActive);
+            section.classList.toggle('is-active', isActive);
             section.hidden = !isActive;
             section.setAttribute('aria-hidden', String(!isActive));
           });
