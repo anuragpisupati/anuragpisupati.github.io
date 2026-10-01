@@ -12,7 +12,7 @@
     <!-- Stylesheets -->
     <!-- Reset default styles and add support for google fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
    
     <!-- Custom styles -->
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -110,9 +110,6 @@
   <h3>Bachelor’s in Aeronautical Engineering</h3>
   <p>Jawaharlal Nehru Technological University · Hyderabad, India · 2014</p>
 </div>
-
-<div id="projects" class="content-region hide">
-  <h2>Projects</h2>
 
 <div id="projects" class="content-region hide">
   <h2>Projects</h2>
@@ -583,6 +580,47 @@
     
     <!-- Load additional JS scripts here -->
     <script type="text/javascript" src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const menuLinks = document.querySelectorAll('.main-menu a[href^="#"]');
+        const sections = document.querySelectorAll('#content > .content-region');
+
+        function showSection(sectionId) {
+          const requestedSection = document.getElementById(sectionId);
+          const activeSection = requestedSection && requestedSection.classList.contains('content-region')
+            ? requestedSection
+            : document.getElementById('home');
+
+          sections.forEach(function (section) {
+            const isActive = section === activeSection;
+            section.classList.toggle('hide', !isActive);
+            section.hidden = !isActive;
+            section.setAttribute('aria-hidden', String(!isActive));
+          });
+
+          menuLinks.forEach(function (link) {
+            const isActive = link.getAttribute('href') === '#' + activeSection.id;
+            link.classList.toggle('active', isActive);
+            if (isActive) {
+              link.setAttribute('aria-current', 'page');
+            } else {
+              link.removeAttribute('aria-current');
+            }
+          });
+        }
+
+        menuLinks.forEach(function (link) {
+          link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const sectionId = link.getAttribute('href').slice(1);
+            showSection(sectionId);
+            history.replaceState(null, '', '#' + sectionId);
+          });
+        });
+
+        showSection(window.location.hash.slice(1) || 'home');
+      });
+    </script>
     
   </body>
 </html>
